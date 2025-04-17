@@ -1,6 +1,5 @@
 @extends('layout.main-layout')
-@section('title' , 'checking')
+@section('title', 'New Election')
 @section('content')
-<p>Hello, world</p>
 
 @endsection
