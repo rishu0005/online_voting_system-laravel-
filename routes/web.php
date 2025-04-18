@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ElectionController;
+use App\Http\Middleware\UserLoginCheck;
 
 //Login
 Route::get('/', [UserController::class, 'showLoginForm'])->name('login');
@@ -16,6 +17,11 @@ Route::post('/registerUser', [UserController::class, 'registerUser'])->name('reg
 
 // Webpages
 Route::get('/home', [UserController::class , 'home'])->name('home');
-Route::get('/new-election', [ElectionController::class , 'electionForm'])->name('new-election');
+
+//Election Pages
+Route::get('/new-election', [ElectionController::class , 'electionForm'])->name('new-election')->middleware([UserLoginCheck::class]);
+Route::post('/save-election', [ElectionController::class , 'saveElection'])->name('save-election');
+
+
 
 
