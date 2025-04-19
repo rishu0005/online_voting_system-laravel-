@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function showLoginForm(){
-        return view('login');
+        return view('auth.login');
     }
 
     public function loginUser(Request $request){
@@ -24,7 +24,13 @@ class UserController extends Controller
       'password' => 'required|min:8|max:20' ]);
 
     if(Auth::attempt($data)){
-        return redirect()->route('home');
+        if(Auth::user()->role === 'admin'){
+            return redirect()->route('dashboard');
+        }
+        else{
+            return redirect()->route('home');
+        }
+
     }
     else{
         return redirect()->route('login')->with('status','Please Enter Right Credentials');
@@ -32,7 +38,7 @@ class UserController extends Controller
     }
 
     public function register(){
-        return view('register');
+        return view('auth.register');
     }
 
     public function registerUser(Request $request){
@@ -59,12 +65,16 @@ class UserController extends Controller
             return redirect()->route('login');
         }
         else{
+
          return redirect()->route('register')->with('status','Cant register');
         }
         
     }
     public function home(){
-        return view('home');
+        return view('user.home');
+    }
+    public function dashboard(){
+        return view('conductor.dashboard');
     }
 
     public function logout(){

@@ -34,41 +34,41 @@
   </div>
   <ul class="nav flex-column">
       <li class="nav-item">
-          <a class="nav-link active" href="#">
+          <a class="nav-link active" href="{{ route('home') }}">
               <i class="bi bi-house-door"></i>
               <span>Dashboard</span>
           </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('candidates') }}">
               <i class="bi bi-people"></i>
               <span>Candidates</span>
           </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('elections') }}">
               <i class="bi bi-card-checklist"></i>
               <span>Elections</span>
           </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('voters') }}">
               <i class="bi bi-person-badge"></i>
               <span>Voters</span>
           </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('result') }}">
               <i class="bi bi-bar-chart"></i>
               <span>Results</span>
           </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
           <a class="nav-link" href="#">
               <i class="bi bi-gear"></i>
               <span>Settings</span>
           </a>
-      </li>
+      </li> --}}
       <li class="nav-item mt-5">
         <a class="nav-link text-danger" href="{{ route('logout') }}">
             <i class="bi bi-box-arrow-right"></i>

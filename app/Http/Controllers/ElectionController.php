@@ -11,7 +11,13 @@ class ElectionController extends Controller
 {
     public function electionForm(){
         $users = User::all();
-        return view('election', compact('users'));
+        return view('conductor.election', compact('users'));
+    }
+
+    public function assignCandidate(){
+        // $users = User::all();
+        $election = Election::all();
+        return view('candidate.assign-candidate',compact('election'));
     }
 
    public function saveElection(Request $request){
@@ -41,4 +47,6 @@ class ElectionController extends Controller
         return redirect()->back()->with('fail','Election cant be saved');
     }
    }
+
+
 }

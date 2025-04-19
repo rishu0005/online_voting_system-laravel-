@@ -116,6 +116,9 @@
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 76%"></div>
                             </div>
                             <button class="btn btn-sm btn-outline-primary">View Details</button>
+                          <a href="{{ route('assign-candidate') }}" class="text-decoration-none">
+                              <button class="btn btn-sm btn-outline-success">Assign Candidate</button>
+                            </a>
                         </div>
                         
                         <div class="election-card p-3 mb-3 position-relative">

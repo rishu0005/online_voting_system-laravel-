@@ -409,3 +409,120 @@ body {
 }
 
 /*** Election Form End ***/
+
+/*=======Apply For Election Form Start =============*/
+
+.introduction {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3498db;
+}
+.form-section {
+    margin-bottom: 30px;
+}
+.form-section h2 {
+    font-size: 20px;
+    color: #3498db;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #444;
+    transition: border 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+.radio-option, .checkbox-option {
+    margin-bottom: 10px;
+}
+.required:after {
+    content: " *";
+    color: #e74c3c;
+}
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.note {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+.btn-submit {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+.declaration {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+.input-group > div {
+    flex: 1;
+}
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+        gap: 0;
+    }
+}
