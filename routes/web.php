@@ -24,7 +24,7 @@ Route::get('/home', [UserController::class , 'home'])->name('home')->middleware(
 Route::get('/dashboard', [UserController::class , 'dashboard'])->name('dashboard')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 Route::get('/candidates', [CandidateControl::class, 'candidatePage'])->name('candidates')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 Route::get('/elections', [ElectionController::class, 'election'])->name('elections')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
-Route::get('/voters', [])->name('voters')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
+Route::get('/voters', [UserController::class, 'voters'])->name('voters')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 Route::get('/results', [])->name('result')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 
 

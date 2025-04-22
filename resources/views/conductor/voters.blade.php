@@ -1,14 +1,24 @@
 @extends('layout.main-layout')
-@section('title', 'Candidates')
+@section('title', 'Voters')
 @section('content')
+
 <div class="main-content">
     <div class="container px-4">
-          <!-- Active Elections & Charts -->
-          <div class="row mt-4">
-            <div class="col-lg-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="mb-0">Voters Overview</h4>
+            <div>
+                <button class="btn btn-primary"><a href="{{ route('register') }}" class="text-light text-decoration-none">
+
+                    <i class="bi bi-plus-circle me-2"></i> Register User
+                </a>
+                </button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-8">
                 <div class="card">
                     <div class="card-header p-3 d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Schedule Elections</h5>
+                        <h5 class="mb-0">Active Elections</h5>
                         <div class="dropdown">
                             <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
                                 Filter
@@ -22,27 +32,55 @@
                         </div>
                     </div>
                     <div class="card-body">
-                      @foreach ($candidates as $candidate)
-                          
-                      <div class="election-card p-3 position-relative">
-                          <span class="badge bg-warning status-badge">Upcoming</span>
-                          <h5>{{$candidate->user->username}}</h5>
-                          <div class="small text-muted mb-2">Starts in 3 days (Apr 20, 2025)</div>
-                          <div class="d-flex justify-content-between mb-2">
-                              <span>Registration: 85%</span>
-                              <span>10,527 eligible voters</span>
-                          </div>
-                          <div class="progress mb-3">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 85%"></div>
-                          </div>
-                          <button class="btn btn-sm btn-outline-primary">View Details</button>
-                      </div>
-                      @endforeach  
+                        <div class="election-card p-3 mb-3 position-relative">
+                            <span class="badge bg-success status-badge">Active</span>
+                            <h5>Student Council President Election</h5>
+                            <div class="small text-muted mb-2">Ends in 2 days (Apr 19, 2025)</div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Participation: 76%</span>
+                                <span>3,254 votes</span>
+                            </div>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 76%"></div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                          <a href="{{ route('assign-candidate') }}" class="text-decoration-none">
+                              <button class="btn btn-sm btn-outline-success">Assign Candidate</button>
+                            </a>
+                        </div>
+                        
+                        <div class="election-card p-3 mb-3 position-relative">
+                            <span class="badge bg-success status-badge">Active</span>
+                            <h5>Faculty Board Representative</h5>
+                            <div class="small text-muted mb-2">Ends in 5 days (Apr 22, 2025)</div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Participation: 63%</span>
+                                <span>2,784 votes</span>
+                            </div>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 63%"></div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                        </div>
+                        
+                        <div class="election-card p-3 position-relative">
+                            <span class="badge bg-warning status-badge">Upcoming</span>
+                            <h5>Budget Allocation Referendum</h5>
+                            <div class="small text-muted mb-2">Starts in 3 days (Apr 20, 2025)</div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Registration: 85%</span>
+                                <span>10,527 eligible voters</span>
+                            </div>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 85%"></div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            {{-- <div class="col-lg-4">
+            <div class="col-lg-4">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0">Latest Results</h5>
@@ -90,7 +128,7 @@
                             </div>
                             <div class="fw-bold">21%</div>
                         </div>
-        
+
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-outline-primary">View Full Results</button>
                         </div>
@@ -142,7 +180,7 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>

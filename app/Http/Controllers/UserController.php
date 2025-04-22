@@ -16,6 +16,9 @@ class UserController extends Controller
         return view('auth.login');
     }
 
+    public function voters(){
+        return view('conductor.voters');
+    }
     public function loginUser(Request $request){
 
     $data = $request->validate([
