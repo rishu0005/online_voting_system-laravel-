@@ -22,8 +22,8 @@ Route::post('/registerUser', [UserController::class, 'registerUser'])->name('reg
 // Webpages
 Route::get('/home', [UserController::class , 'home'])->name('home')->middleware([UserLoginCheck::class], [UserRoleOnly::class]);
 Route::get('/dashboard', [UserController::class , 'dashboard'])->name('dashboard')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
-Route::get('/candidates', [])->name('candidates')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
-Route::get('/elections', [])->name('elections')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
+Route::get('/candidates', [CandidateControl::class, 'candidatePage'])->name('candidates')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
+Route::get('/elections', [ElectionController::class, 'election'])->name('elections')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 Route::get('/voters', [])->name('voters')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 Route::get('/results', [])->name('result')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 
@@ -37,4 +37,5 @@ Route::post('/save-election', [ElectionController::class , 'saveElection'])->nam
 Route::get('/assign-candidate',[ElectionController::class, 'assignCandidate'])->name('assign-candidate')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 Route::get('/notice-page', [CandidateControl::class, 'noticePage'])->name('notice-page')->middleware( [UserRoleOnly::class]);
 Route::get('/apply-election/{id}', [CandidateControl::class, 'applyElection'])->name('apply-election');
+Route::post('/apply-election-form', [CandidateControl::class, 'applyElectionForm'])->name('apply-election-form');
 

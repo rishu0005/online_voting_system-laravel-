@@ -45,6 +45,7 @@
               <span>Candidates</span>
           </a>
       </li>
+
       <li class="nav-item">
           <a class="nav-link" href="{{ route('elections') }}">
               <i class="bi bi-card-checklist"></i>
@@ -63,6 +64,12 @@
               <span>Results</span>
           </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('notice-page') }}">
+            <i class="bi bi-card-checklist"></i>
+            <span>Notice Page</span>
+        </a>
+    </li>
       {{-- <li class="nav-item">
           <a class="nav-link" href="#">
               <i class="bi bi-gear"></i>

@@ -14,6 +14,11 @@ class ElectionController extends Controller
         return view('conductor.election', compact('users'));
     }
 
+    public function election(){
+        $elections = Election::all();
+        return view('user.view-election', compact('elections'));
+    }
+
     public function assignCandidate(){
         // $users = User::all();
         $election = Election::all();
