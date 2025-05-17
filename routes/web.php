@@ -9,8 +9,10 @@ use App\Http\Middleware\AdminRoleOnly;
 use App\Http\Middleware\UserRoleOnly;
 use App\Http\Middleware\UserLoginCheck;
 
-//Login route
+//Admin Dashboard
 Route::get('/', [AdminController::class, 'adminDashboardPage'])->name('adminDashboardPage');
+
+//Login route
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/loginUser', [UserController::class, 'loginUser'])->name('loginUser');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
@@ -33,12 +35,8 @@ Route::get('/election', [ElectionController::class, 'electionPage'])->name('elec
 Route::get('/election/create', [ElectionController::class, 'createElectionPage'])->name('createElectionPage');
 Route::post('/election/save', [ElectionController::class, 'saveElectionData'])->name('saveElectionData');
 Route::get('/election/view/{id}', [ElectionController::class, 'viewElectionPage'])->name('viewElectionPage');
-
-// Route::get('/new-election', [ElectionController::class , 'electionForm'])->name('new-election')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
-Route::post('/save-election', [ElectionController::class , 'saveElection'])->name('save-election');
-// Route::get('/elections', [ElectionController::class, 'election'])->name('elections')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
-
-
+Route::get('/election/edit/{id}',[ElectionController::class, 'editElectionPage'])->name('editElectionPage');
+Route::post('/election/update',[ElectionController::class, 'updateElectionData'])->name('updateElectionData');
 //Candidate Pages
 // Route::get('/assign-candidate',[ElectionController::class, 'assignCandidate'])->name('assign-candidate')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 // Route::get('/notice-page', [CandidateControl::class, 'noticePage'])->name('notice-page');

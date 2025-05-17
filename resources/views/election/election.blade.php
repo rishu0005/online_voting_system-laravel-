@@ -52,7 +52,7 @@
                                                 class="btn btn-sm btn-danger" title="print">
                                                 <i class="fas fa-print"></i>
                                             </a> --}}
-                                            <a href="{{-- {{ route('editPerformaPage',$item->id) }} --}}" class="btn btn-sm btn-danger" title="Edit">
+                                            <a href="{{ route('editElectionPage',$item->id) }}" class="btn btn-sm btn-danger" title="Edit">
                                             <i class="fas fa-edit"></i>
                                             </a>
                                     
