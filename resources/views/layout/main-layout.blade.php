@@ -32,27 +32,27 @@
       <img src="" alt="logo" class="img-fluid">
   </div>
   <ul class="nav flex-column">
-      <li class="nav-item">
-          <a class="nav-link active" href="{{ route('adminDashboardPage') }}">
+      <li class="nav-item ">
+          <a class="nav-link  {{ request()->is('dashboard') || request()->is('/') ? 'active' : 'inactive' }}" href="{{ route('adminDashboardPage') }}">
               <i class="bi bi-house-door"></i>
               <span>Dashboard</span>
           </a>
       </li> 
       
       <li class="nav-item">
-          <a class="nav-link" href="{{ route('electionPage') }}">
+          <a class="nav-link {{ request()->is('election*') ? 'active' : 'inactive' }} " href="{{ route('electionPage') }}">
               <i class="bi bi-card-checklist"></i>
               <span>Elections</span>
           </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="{{ route('voterPage') }}">
+          <a class="nav-link {{ request()->is('voter*') ? 'active' : 'inactive' }} " href="{{ route('voterPage') }}">
               <i class="bi bi-card-checklist"></i>
               <span>Voters</span>
           </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="{{ route('noticePage') }}">
+          <a class="nav-link {{ request()->is('notice*') ? 'active' : 'inactive' }} " href="{{ route('noticePage') }}">
               <i class="bi bi-card-checklist"></i>
               <span>Notice Page</span>
           </a>

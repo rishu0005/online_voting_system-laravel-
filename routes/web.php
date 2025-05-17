@@ -10,6 +10,9 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Middleware\AdminRoleOnly;
 use App\Http\Middleware\UserRoleOnly;
 use App\Http\Middleware\UserLoginCheck;
+use App\Mail\Testmail;
+use Illuminate\Support\Facades\Mail;
+
 
 //Admin Dashboard Route
 Route::get('/', [AdminController::class, 'adminDashboardPage'])->name('adminDashboardPage');
@@ -52,3 +55,7 @@ Route::get('/notice', [NoticeController::class , 'noticePage'])->name('noticePag
 // Route::get('/apply-election/{id}', [CandidateControl::class, 'applyElection'])->name('apply-election');
 // Route::post('/apply-election-form', [CandidateControl::class, 'applyElectionForm'])->name('apply-election-form');
 
+Route::get('/test-mail', function () {
+    Mail::to('rishusingh5943@gmail.com')->send(new Testmail());
+    return 'Mail sent!';
+});
