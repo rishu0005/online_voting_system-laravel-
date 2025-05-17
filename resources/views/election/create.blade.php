@@ -1,14 +1,15 @@
+
 @extends('layout.main-layout')
 @section('title', 'New Election')
 @section('content')
-<div class="container">
-    <div class="form-container">
+<div class="container  margin-left pt-5">
+    <div class="form-container margin-left  mt-0">
         <div class="header">
             <h2><i class="bi bi-calendar-plus me-2"></i>Create New Election  {{Auth::user()->id}}</h2>
             <p class="text-muted">Fill in the details to create a new election in the system</p>
         </div>
         
-        <form id="electionForm" action="{{ route('save-election') }}" method="POST">      
+        <form id="electionForm" action="{{ route('saveElectionData') }}" method="POST">      
             @csrf
             <!-- Election Name -->
 

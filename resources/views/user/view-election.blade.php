@@ -25,22 +25,7 @@
                       </div>
                       <div class="card-body">
     
-                          {{-- <div class="election-card p-3 mb-3 position-relative">
-                              <span class="badge bg-success status-badge">Active</span>
-                              <h5>Student Council President Election</h5>
-                              <div class="small text-muted mb-2">Ends in 2 days (Apr 19, 2025)</div>
-                              <div class="d-flex justify-content-between mb-2">
-                                  <span>Participation: 76%</span>
-                                  <span>3,254 votes</span>
-                              </div>
-                              <div class="progress mb-3">
-                                  <div class="progress-bar bg-success" role="progressbar" style="width: 76%"></div>
-                              </div>
-                              <button class="btn btn-sm btn-outline-primary">View Details</button>
-                            <a href="{{ route('assign-candidate') }}" class="text-decoration-none">
-                                <button class="btn btn-sm btn-outline-success">Assign Candidate</button>
-                              </a>
-                          </div> --}}
+                      
                           @foreach ($elections as $election )
                           <div class="election-card p-3 mb-3 position-relative">
                             <span class="badge bg-success status-badge">{{ $election->status }}</span>

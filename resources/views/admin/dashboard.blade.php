@@ -13,7 +13,7 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="mb-0">Dashboard Overview</h4>
             <div>
-                <button class="btn btn-primary"><a href="{{ route('new-election') }}" class="text-light text-decoration-none">
+                {{-- <button class="btn btn-primary"><a href="{{ route('new-election') }}" class="text-light text-decoration-none"> --}}
 
                     <i class="bi bi-plus-circle me-2"></i> Create New Election
                 </a>
@@ -29,7 +29,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="stat-label">Active Elections</div>
-                                <div class="stat-value">3</div>
+                                <div class="stat-value">{{$election->count()}}</div>
                             </div>
                             <div class="stat-icon text-primary">
                                 <i class="bi bi-calendar-check"></i>
@@ -44,7 +44,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="stat-label">Total Votes</div>
-                                <div class="stat-value">8,942</div>
+                                <div class="stat-value">0</div>
                             </div>
                             <div class="stat-icon text-success">
                                 <i class="bi bi-check-square"></i>
@@ -59,7 +59,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="stat-label">Registered Voters</div>
-                                <div class="stat-value">12,385</div>
+                                <div class="stat-value">{{ $users->count() }}</div>
                             </div>
                             <div class="stat-icon text-warning">
                                 <i class="bi bi-people"></i>
@@ -116,7 +116,7 @@
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 76%"></div>
                             </div>
                             <button class="btn btn-sm btn-outline-primary">View Details</button>
-                          <a href="{{ route('assign-candidate') }}" class="text-decoration-none">
+                          {{-- <a href="{{ route(   'assign-candidate') }}" class="text-decoration-none"> --}}
                               <button class="btn btn-sm btn-outline-success">Assign Candidate</button>
                             </a>
                         </div>

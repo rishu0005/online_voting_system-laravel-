@@ -9,23 +9,23 @@ use Illuminate\Http\Request;
 
 class ElectionController extends Controller
 {
-    public function electionForm(){
+    public function createElectionPage(){
         $users = User::all();
-        return view('conductor.election', compact('users'));
+        return view('election.create', compact('users'));
     }
 
-    public function election(){
-        $elections = Election::all();
-        return view('user.view-election', compact('elections'));
-    }
+//     public function election(){
+//         $elections = Election::all();
+//         return view('user.view-election', compact('elections'));
+//     }
 
-    public function assignCandidate(){
-        // $users = User::all();
-        $election = Election::all();
-        return view('candidate.assign-candidate',compact('election'));
-    }
+//     public function assignCandidate(){
+//         // $users = User::all();
+//         $election = Election::all();
+//         return view('candidate.assign-candidate',compact('election'));
+//     }
 
-   public function saveElection(Request $request){
+   public function saveElectionData(Request $request){
     // return $request;
      $request->validate([
         'election_name' => 'required',
@@ -46,12 +46,20 @@ class ElectionController extends Controller
     $election->end_time = $request->end_time; 
 
     if($election->save()){
-        return redirect()->back()->with('success','Election is  saved');
+        return redirect()->route('electionPage')->with('status','Election is  saved');
     }
     else{
         return redirect()->back()->with('fail','Election cant be saved');
     }
+
+    
    }
+
+        public function electionPage(){
+            $election = Election::all();
+            // return $election;
+            return view('election.election' , compact('election'));
+        }
 
 
 }

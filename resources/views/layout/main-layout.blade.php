@@ -23,35 +23,36 @@
 </head>
 <body>
    
-    {{-- {{Auth::check()}} --}}
+    <!-- SHow this sidebar if user is logged in -->
     @if (Auth::check())
      <!-- Sidebar -->
  <div class="sidebar col-md-3 col-lg-2 d-md-block">
   <div class="text-center mb-4">
-      {{-- <h4 class="mb-0 fw-bold">VoteNow</h4> --}}
-      {{-- <small class="d-block">Admin Dashboard</small> --}}
+     
       <img src="" alt="logo" class="img-fluid">
   </div>
   <ul class="nav flex-column">
       <li class="nav-item">
-          <a class="nav-link active" href="{{ route('home') }}">
+          <a class="nav-link active" href="{{ route('adminDashboardPage') }}">
               <i class="bi bi-house-door"></i>
               <span>Dashboard</span>
           </a>
-      </li>
+      </li> 
+      
       <li class="nav-item">
+          <a class="nav-link" href="{{ route('electionPage') }}">
+              <i class="bi bi-card-checklist"></i>
+              <span>Elections</span>
+          </a>
+      </li>
+      {{-- <li class="nav-item">
           <a class="nav-link" href="{{ route('candidates') }}">
               <i class="bi bi-people"></i>
               <span>Candidates</span>
           </a>
       </li>
 
-      <li class="nav-item">
-          <a class="nav-link" href="{{ route('elections') }}">
-              <i class="bi bi-card-checklist"></i>
-              <span>Elections</span>
-          </a>
-      </li>
+     
       <li class="nav-item">
           <a class="nav-link" href="{{ route('voters') }}">
               <i class="bi bi-person-badge"></i>
@@ -69,7 +70,7 @@
             <i class="bi bi-card-checklist"></i>
             <span>Notice Page</span>
         </a>
-    </li>
+    </li> --}}
       {{-- <li class="nav-item">
           <a class="nav-link" href="#">
               <i class="bi bi-gear"></i>
