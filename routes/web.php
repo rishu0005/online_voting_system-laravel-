@@ -5,11 +5,13 @@ use App\Http\Controllers\CandidateControl;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ElectionController;
+use App\Http\Controllers\VoterController;
+use App\Http\Controllers\NoticeController;
 use App\Http\Middleware\AdminRoleOnly;
 use App\Http\Middleware\UserRoleOnly;
 use App\Http\Middleware\UserLoginCheck;
 
-//Admin Dashboard
+//Admin Dashboard Route
 Route::get('/', [AdminController::class, 'adminDashboardPage'])->name('adminDashboardPage');
 
 //Login route
@@ -18,8 +20,7 @@ Route::post('/loginUser', [UserController::class, 'loginUser'])->name('loginUser
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 //register route
-Route::get('/register', [UserController::class, 'register'])->name('register');
-Route::post('/registerUser', [UserController::class, 'registerUser'])->name('registerUser');
+
 
 
 // // Webpages route
@@ -30,14 +31,22 @@ Route::post('/registerUser', [UserController::class, 'registerUser'])->name('reg
 // Route::get('/results', [])->name('result')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 
 
-//Election Pages
+//Election Routes
 Route::get('/election', [ElectionController::class, 'electionPage'])->name('electionPage');
 Route::get('/election/create', [ElectionController::class, 'createElectionPage'])->name('createElectionPage');
 Route::post('/election/save', [ElectionController::class, 'saveElectionData'])->name('saveElectionData');
 Route::get('/election/view/{id}', [ElectionController::class, 'viewElectionPage'])->name('viewElectionPage');
 Route::get('/election/edit/{id}',[ElectionController::class, 'editElectionPage'])->name('editElectionPage');
 Route::post('/election/update',[ElectionController::class, 'updateElectionData'])->name('updateElectionData');
-//Candidate Pages
+
+
+//Voter Routes
+Route::get('/voters', [VoterController::class, 'voterPage' ])->name('voterPage');
+Route::get('/voter/register', [VoterController::class, 'registerVoter'])->name('registerVoter');
+Route::post('/saveVoter', [VoterController::class, 'saveVoterData'])->name('saveVoterData');
+
+// Notice Page Routes
+Route::get('/notice', [NoticeController::class , 'noticePage'])->name('noticePage');
 // Route::get('/assign-candidate',[ElectionController::class, 'assignCandidate'])->name('assign-candidate')->middleware([UserLoginCheck::class], [AdminRoleOnly::class]);
 // Route::get('/notice-page', [CandidateControl::class, 'noticePage'])->name('notice-page');
 // Route::get('/apply-election/{id}', [CandidateControl::class, 'applyElection'])->name('apply-election');

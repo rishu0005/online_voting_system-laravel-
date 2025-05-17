@@ -45,6 +45,20 @@
               <span>Elections</span>
           </a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{{ route('voterPage') }}">
+              <i class="bi bi-card-checklist"></i>
+              <span>Voters</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{{ route('noticePage') }}">
+              <i class="bi bi-card-checklist"></i>
+              <span>Notice Page</span>
+          </a>
+      </li>
+      
+
       {{-- <li class="nav-item">
           <a class="nav-link" href="{{ route('candidates') }}">
               <i class="bi bi-people"></i>
@@ -52,13 +66,7 @@
           </a>
       </li>
 
-     
-      <li class="nav-item">
-          <a class="nav-link" href="{{ route('voters') }}">
-              <i class="bi bi-person-badge"></i>
-              <span>Voters</span>
-          </a>
-      </li>
+
       <li class="nav-item">
           <a class="nav-link" href="{{ route('result') }}">
               <i class="bi bi-bar-chart"></i>

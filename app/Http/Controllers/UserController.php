@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Election;
-use Illuminate\Support\Facades\Hash;
+
 
 
 class UserController extends Controller
@@ -43,35 +43,7 @@ class UserController extends Controller
     //     return view('auth.register');
     // }
 
-    // public function registerUser(Request $request){
-    //     $request->validate([
-    //         'name' =>'required',
-    //         'username' => 'required|unique:users,username',
-    //         'email' => 'required|unique:users,email',
-    //         'password' => 'required',
-    //         'class' => 'required',
-    //         'year' => 'required',
-    //         'enroll' =>'required'
-    //     ]);
-
-    //     $data = new User();
-    //     $data->name = $request->name;
-    //     $data->username = $request->username;
-    //     $data->class = $request->class;
-    //     $data->enroll_no = $request->enroll;
-    //     $data->year = $request->year;
-    //     $data->email = $request->email;
-    //     $data->password = Hash::make($request->password);
-    //     // return $data ;       
-    //     if($data->save()){
-    //         return redirect()->route('login');
-    //     }
-    //     else{
-
-    //      return redirect()->route('register')->with('status','Cant register');
-    //     }
-        
-    // }
+    // 
     // public function home(){
     //     return view('user.home');
     // }

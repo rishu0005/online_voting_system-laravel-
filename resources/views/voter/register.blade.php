@@ -10,7 +10,7 @@
                     <p class="text-white">Join us today! It only takes a minute</p>
                 </div>
                 <div class="card-body p-4 p-sm-5">
-                    <form method="post" action="{{ route('registerUser') }}">
+                    <form method="post" action="{{ route('saveVoterData') }}">
                         @csrf
                         @if(session('status'))
                         <span class="alert alert-danger">
